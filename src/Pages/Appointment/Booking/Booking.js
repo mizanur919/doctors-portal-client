@@ -6,7 +6,7 @@ const Booking = ({ timeSlot, date, setBookingSuccess }) => {
     const [openBooking, setBookingOpen] = React.useState(false);
     const handleBookingOpen = () => setBookingOpen(true);
     const handleBookingClose = () => setBookingOpen(false);
-    const { name, time, space } = timeSlot;
+    const { name, time, space, price } = timeSlot;
 
     return (
         <>
@@ -20,6 +20,9 @@ const Booking = ({ timeSlot, date, setBookingSuccess }) => {
                     </Typography>
                     <Typography variant="caption" gutterBottom component="div">
                         {space} {space > 1 ? 'Spaces' : 'Space'} Available
+                    </Typography>
+                    <Typography variant="caption" gutterBottom component="div">
+                        Price: ${price}
                     </Typography>
                     <Button onClick={handleBookingOpen} sx={{ my: 2 }} variant="contained">Book Appointment</Button>
                 </Paper>
